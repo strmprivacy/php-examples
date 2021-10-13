@@ -1,0 +1,26 @@
+{
+    "authors": [
+        {
+            "email": "lennart@vazaha.nl",
+            "name": "Lennart Hengstmengel"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Examples\\": "examples/"
+        }
+    },
+    "description": "Examples for interacting with Stream Machine using PHP",
+    "license": "Apache-2.0",
+    "name": "streammachineio/php-examples",
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "git@github.com:streammachineio/php-driver.git"
+        }
+    ],
+    "require": {
+        "streammachineio/php-driver": "dev-master"
+    },
+    "type": "library"
+}
