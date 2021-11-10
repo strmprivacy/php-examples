@@ -3,7 +3,7 @@
 namespace Examples\Utils;
 
 use InvalidArgumentException;
-use Streammachine\Driver\Client;
+use StrmPrivacy\Driver\Client;
 
 class ClientBuilder
 {

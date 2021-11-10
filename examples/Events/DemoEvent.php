@@ -3,7 +3,7 @@
 namespace Examples\Events;
 
 use AvroSchema;
-use Streammachine\Driver\Contracts\Event;
+use StrmPrivacy\Driver\Contracts\Event;
 
 class DemoEvent implements Event
 {

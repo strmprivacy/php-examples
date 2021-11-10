@@ -2,14 +2,14 @@
 
 use Examples\Events\DemoEvent;
 use Examples\Utils\ClientBuilder;
-use Streammachine\Driver\Enums\SerializationType;
+use StrmPrivacy\Driver\Enums\SerializationType;
 
 include_once(realpath(dirname(__FILE__)) . '/../vendor/autoload.php');
 
-/** @var \Streammachine\Driver\Sender $sender */
+/** @var \StrmPrivacy\Driver\Sender $sender */
 $sender = ClientBuilder::build($argv, Sender::class);
 // or instantiate a Sender class directly:
-// $sender = new \Streammachine\Driver\Sender('billingId', 'clientId', 'clientSecret');
+// $sender = new \StrmPrivacy\Driver\Sender('billingId', 'clientId', 'clientSecret');
 
 $event = new DemoEvent();
 
