@@ -3,6 +3,7 @@
 use Examples\Events\DemoEvent;
 use Examples\Utils\ClientBuilder;
 use StrmPrivacy\Driver\Enums\SerializationType;
+use StrmPrivacy\Driver\Sender;
 
 include_once(realpath(dirname(__FILE__)) . '/../vendor/autoload.php');
 
