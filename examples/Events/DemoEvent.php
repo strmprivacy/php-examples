@@ -9,52 +9,42 @@ class DemoEvent implements Event
 {
     public $consentLevels;
 
-    public $producerSessionId;
+    public $uniqueIdentifier;
 
-    public $url;
+    public $consistentValue;
 
-    public $eventType;
+    public $someSensitiveValue;
 
-    public $referrer;
+    public $notSensitiveValue;
 
-    public $userAgent;
-
-    public $conversion;
-
-    public $customer;
-
-    public $abTests;
+    public $eventContractRef;
 
     public function getStrmSchemaRef(): string
     {
-        return 'streammachine/clickstream/1.0.0';
+        return 'streammachine/demo/1.0.2';
     }
 
     public function toArray(): array
     {
         return [
             'strmMeta' => [
-                'eventContractRef' => $this->getStrmSchemaRef(),
+                'eventContractRef' => $this->eventContractRef,
                 'nonce' => null,
                 'timestamp' => null,
                 'keyLink' => null,
                 'billingId' => null,
                 'consentLevels' => $this->consentLevels,
             ],
-            'producerSessionId' => $this->producerSessionId,
-            'url' => $this->url,
-            'eventType' => $this->eventType,
-            'referrer' => $this->referrer,
-            'userAgent' => $this->userAgent,
-            'conversion' => $this->conversion,
-            'customer' => $this->customer,
-            'abTests' => $this->abTests,
+            'uniqueIdentifier' => $this->uniqueIdentifier,
+            'consistentValue' => $this->consistentValue,
+            'someSensitiveValue' => $this->someSensitiveValue,
+            'notSensitiveValue' => $this->notSensitiveValue,
         ];
     }
 
     public function getStrmSchema(): AvroSchema
     {
-        $json = file_get_contents(realpath(dirname(__FILE__)) . '/../../assets/schemas/clickstream.avsc');
+        $json = file_get_contents(realpath(dirname(__FILE__)) . '/../../assets/schemas/demo.avsc');
 
         return AvroSchema::parse($json);
     }

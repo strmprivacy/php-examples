@@ -1,8 +1,7 @@
 {
-  "name": "ClickstreamEvent",
   "type": "record",
-  "namespace": "io.streammachine.public_schemas.clickstream",
-  "strmSchemaId": "clickstream",
+  "name": "DemoEvent",
+  "namespace": "io.streammachine.schemas.demo.v1",
   "fields": [
     {
       "name": "strmMeta",
@@ -55,53 +54,39 @@
             }
           }
         ]
-      },
-      "doc": "TODO strmMeta will be nullable eventually, but Gateway functionality needs to be verified first!"
-    },
-    {
-      "name": "producerSessionId",
-      "type": "string"
-    },
-    {
-      "name": "url",
-      "type": "string"
-    },
-    {
-      "name": "eventType",
-      "type": "string"
-    },
-    {
-      "name": "referrer",
-      "type": "string"
-    },
-    {
-      "name": "userAgent",
-      "type": "string"
-    },
-    {
-      "name": "conversion",
-      "type": "int"
-    },
-    {
-      "name": "customer",
-      "type": {
-        "name": "Customer",
-        "type": "record",
-        "fields": [
-          {
-            "name": "id",
-            "type": "string"
-          }
-        ]
       }
     },
     {
-      "name": "abTests",
-      "type": {
-        "type": "array",
-        "items": "string"
-      }
+      "name": "uniqueIdentifier",
+      "type": [
+        "null",
+        "string"
+      ],
+      "doc": "any value. For illustration purposes: use a value that is consistent over time like a customer or device ID.",
+      "default": null
+    },
+    {
+      "name": "consistentValue",
+      "type": "string",
+      "doc": "any value. For illustration purposes: use a value that is consistent over a limited period like a session."
+    },
+    {
+      "name": "someSensitiveValue",
+      "type": [
+        "null",
+        "string"
+      ],
+      "doc": "any value. For illustration purposes: use a value that could identify a user over time based on behavior, like browsing behavior (e.g. urls).",
+      "default": null
+    },
+    {
+      "name": "notSensitiveValue",
+      "type": [
+        "null",
+        "string"
+      ],
+      "doc": "any value. For illustration purposes: use a value that is not sensitive at all, like the rank of an item in a set.",
+      "default": null
     }
   ]
 }
-
