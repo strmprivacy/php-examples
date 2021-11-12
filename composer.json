@@ -10,9 +10,9 @@
             "Examples\\": "examples/"
         }
     },
-    "description": "Examples for interacting with Stream Machine using PHP",
+    "description": "Examples for interacting with STRM Privacy using PHP",
     "license": "Apache-2.0",
-    "name": "streammachineio/php-examples",
+    "name": "strmprivacy/php-examples",
     "repositories": [
         {
             "type": "vcs",
@@ -20,7 +20,7 @@
         }
     ],
     "require": {
-        "streammachineio/php-driver": "dev-master"
+        "strmprivacy/php-driver": "dev-master"
     },
     "type": "library"
 }

@@ -2,25 +2,26 @@
 
 use Examples\Events\DemoEvent;
 use Examples\Utils\ClientBuilder;
-use Streammachine\Driver\Enums\SerializationType;
+use StrmPrivacy\Driver\Enums\SerializationType;
+use StrmPrivacy\Driver\Sender;
 
 include_once(realpath(dirname(__FILE__)) . '/../vendor/autoload.php');
 
-/** @var \Streammachine\Driver\Sender $sender */
+/** @var \StrmPrivacy\Driver\Sender $sender */
 $sender = ClientBuilder::build($argv, Sender::class);
 // or instantiate a Sender class directly:
-// $sender = new \Streammachine\Driver\Sender('billingId', 'clientId', 'clientSecret');
+// $sender = new \StrmPrivacy\Driver\Sender('billingId', 'clientId', 'clientSecret');
 
-$event = new DemoEvent();
+while (true) {
+    $event = new DemoEvent();
 
-$event->consentLevels = [0];
-$event->producerSessionId = 'producer';
-$event->url = 'https://www.google.com';
-$event->eventType = 'click';
-$event->referrer = 'foo';
-$event->userAgent = 'bar';
-$event->conversion = 0;
-$event->customer = ['id' => 'bla'];
-$event->abTests = ['a', 'b'];
+    $event->eventContractRef = 'streammachine/example/1.2.3';
+    $event->consentLevels = [0];
+    $event->uniqueIdentifier = uniqid();
+    $event->someSensitiveValue = 'A value that should be encrypted';
+    $event->consistentValue = 'a-user-session';
+    $event->notSensitiveValue = 'Hello from PHP';
 
-$sender->send($event, SerializationType::AVRO_BINARY);
+    $sender->send($event, SerializationType::AVRO_BINARY);
+    sleep(0.5);
+}
