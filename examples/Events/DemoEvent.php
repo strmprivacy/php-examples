@@ -21,7 +21,7 @@ class DemoEvent implements Event
 
     public function getStrmSchemaRef(): string
     {
-        return 'streammachine/demo/1.0.2';
+        return 'strmprivacy/demo/1.0.2';
     }
 
     public function toArray(): array

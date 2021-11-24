@@ -15,7 +15,7 @@ $sender = ClientBuilder::build($argv, Sender::class);
 while (true) {
     $event = new DemoEvent();
 
-    $event->eventContractRef = 'streammachine/example/1.2.3';
+    $event->eventContractRef = 'strmprivacy/example/1.2.3';
     $event->consentLevels = [0];
     $event->uniqueIdentifier = uniqid();
     $event->someSensitiveValue = 'A value that should be encrypted';

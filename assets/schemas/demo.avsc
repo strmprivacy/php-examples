@@ -1,7 +1,7 @@
 {
   "type": "record",
   "name": "DemoEvent",
-  "namespace": "io.streammachine.schemas.demo.v1",
+  "namespace": "io.strmprivacy.schemas.demo.v1",
   "fields": [
     {
       "name": "strmMeta",
