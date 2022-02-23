@@ -15,7 +15,7 @@ $sender = ClientBuilder::build($argv, Sender::class);
 while (true) {
     $event = new DemoEvent();
 
-    $event->eventContractRef = 'strmprivacy/example/1.2.3';
+    $event->eventContractRef = 'strmprivacy/example/1.3.0';
     $event->consentLevels = [0];
     $event->uniqueIdentifier = uniqid();
     $event->someSensitiveValue = 'A value that should be encrypted';
@@ -23,5 +23,5 @@ while (true) {
     $event->notSensitiveValue = 'Hello from PHP';
 
     $sender->send($event, SerializationType::AVRO_BINARY);
-    sleep(0.5);
+    usleep(500 * 1000);
 }
