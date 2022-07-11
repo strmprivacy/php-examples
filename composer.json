@@ -15,8 +15,8 @@
     "name": "strmprivacy/php-examples",
     "repositories": [
         {
-            "type": "path",
-            "url": "~/strm/drivers/php-driver"
+            "type": "vcs",
+            "url": "git@github.com:strmprivacy/php-driver.git"
         }
     ],
     "require": {

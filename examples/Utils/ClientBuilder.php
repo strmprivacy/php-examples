@@ -9,7 +9,7 @@ class ClientBuilder
 {
     protected const DEFAULT_CLASS = Client::class;
 
-    public static function build(array $args, string $subClass = null, string $gatewayHost = 'events.dev.strmprivacy.io', string $authHost = 'accounts.dev.strmprivacy.io'): Client
+    public static function build(array $args, string $subClass = null, string $gatewayHost = 'events.strmprivacy.io', string $authHost = 'accounts.strmprivacy.io'): Client
     {
         if ($subClass === null) {
             $subClass = self::DEFAULT_CLASS;
