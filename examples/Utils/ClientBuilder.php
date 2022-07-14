@@ -9,7 +9,7 @@ class ClientBuilder
 {
     protected const DEFAULT_CLASS = Client::class;
 
-    public static function build(array $args, string $subClass = null, string $gatewayHost = 'events.strmprivacy.io', string $stsHost = 'sts.strmprivacy.io'): Client
+    public static function build(array $args, string $subClass = null, string $gatewayHost = 'events.strmprivacy.io', string $authHost = 'accounts.strmprivacy.io'): Client
     {
         if ($subClass === null) {
             $subClass = self::DEFAULT_CLASS;
@@ -19,13 +19,13 @@ class ClientBuilder
             }
         }
 
-        if (count($args) < 4) {
-            throw new InvalidArgumentException("Usage: ${args[0]} <billingId> <clientId> <clientSecret>");
+        if (count($args) < 3) {
+            throw new InvalidArgumentException("Usage: ${args[0]} <clientId> <clientSecret>");
         }
 
-        return new $subClass($args[1], $args[2], $args[3], [
+        return new $subClass($args[1], $args[2], [
             'gatewayHost' => $gatewayHost,
-            'stsHost' => $stsHost
+            'authHost' => $authHost
         ]);
     }
 }
